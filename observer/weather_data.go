@@ -12,7 +12,14 @@ type MeteorologicalData struct {
 }
 
 func NewWeatherData() *WeatherData {
-	wd := WeatherData{}
+	wd := WeatherData{
+		observers: nil,
+		meteorologicalData: MeteorologicalData{
+			temperature: 0,
+			humidity:    0,
+			pressure:    0,
+		},
+	}
 	wd.observers = make([]Observer, 0)
 	return &wd
 }
